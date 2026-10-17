@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZERODIAX // ZERO SYNDICATE VIP — Official Valetax Partner #1682343</title>
+<meta name="description" content="ZERODIAX // ZERO SYNDICATE VIP — institutional-grade market intelligence, astro-sync volatility modelling, and elite trade execution. Official Valetax Partner #1682343." />
+<meta name="theme-color" content="#05070A" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          obsidian: '#05070A',
+          panel: '#0A0E14',
+          panel2: '#0D121A',
+          accent: '#22D3EE',
+          neon: '#7C5CFF',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+        boxShadow: {
+          glow: '0 0 60px -12px rgba(34,211,238,0.45)',
+          glowv: '0 0 60px -12px rgba(124,92,255,0.45)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root {
+    --obsidian: #05070A;
+    --accent: #22D3EE;
+    --neon: #7C5CFF;
+  }
+
+  html, body {
+    background-color: var(--obsidian);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.28);
+    color: #E2F8FF;
+  }
+
+  /* ---------- Scrollbar ---------- */
+  ::-webkit-scrollbar { width: 9px; height: 9px; }
+  ::-webkit-scrollbar-track { background: #05070A; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(34,211,238,.35), rgba(124,92,255,.35));
+    border-radius: 99px;
+    border: 2px solid #05070A;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(34,211,238,.6); }
+
+  /* ---------- Ambient grid + vignette ---------- */
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 40%, transparent 100%);
+  }
+
+  .vignette {
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 0%, rgba(34,211,238,0.10), transparent 65%),
+      radial-gradient(ellipse 55% 45% at 85% 10%, rgba(124,92,255,0.12), transparent 65%),
+      radial-gradient(ellipse 80% 60% at 50% 110%, rgba(34,211,238,0.06), transparent 70%);
+  }
+
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.028;
+  }
+
+  /* ---------- Preloader ---------- */
+  #preloader {
+    transition: opacity .85s cubic-bezier(.4,0,.2,1),
+                transform .95s cubic-bezier(.4,0,.2,1),
+                filter .85s cubic-bezier(.4,0,.2,1);
+    will-change: opacity, transform, filter;
+  }
+  #preloader.pre-out {
+    opacity: 0;
+    transform: scale(1.055);
+    filter: blur(10px);
+    pointer-events: none;
+  }
+
+  #preShieldPath {
+    stroke-dasharray: 480;
+    stroke-dashoffset: 480;
+    animation: drawStroke 1.9s cubic-bezier(.16,1,.3,1) .15s forwards;
+  }
+  #preShieldInner {
+    opacity: 0;
+    animation: fadeIn 1s ease .9s forwards;
+  }
+  #preMonogram {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawStroke 1.3s cubic-bezier(.16,1,.3,1) 1.05s forwards;
+  }
+  @keyframes drawStroke { to { stroke-dashoffset: 0; } }
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  .boot-line {
+    animation: bootIn .38s cubic-bezier(.16,1,.3,1) both;
+  }
+  @keyframes bootIn {
+    from { opacity: 0; transform: translateY(7px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .caret::after {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 11px;
+    margin-left: 4px;
+    background: var(--accent);
+    animation: blink 1s steps(2, start) infinite;
+    vertical-align: -1px;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ---------- Reveal on scroll ---------- */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .9s cubic-bezier(.16,1,.3,1),
+                transform .9s cubic-bezier(.16,1,.3,1);
+  }
+  [data-reveal].in {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-boot-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .95s cubic-bezier(.16,1,.3,1),
+                transform .95s cubic-bezier(.16,1,.3,1);
+  }
+  [data-boot-reveal].in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ---------- Marquee tape ---------- */
+  .tape-mask {
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  }
+  .tape-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 46s linear infinite;
+  }
+  .tape-track:hover { animation-play-state: paused; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ---------- Pulses & spins ---------- */
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 currentColor; }
+    50% { opacity: .55; box-shadow: 0 0 0 4px rgba(16,185,129,0); }
+  }
+  .pulse-dot { animation: pulseDot 2s ease-in-out infinite; }
+
+  @keyframes spin360 { to { transform: rotate(360deg); } }
+  .spin-slow  { animation: spin360 26s linear infinite; }
+  .spin-slow-r { animation: spin360 34s linear infinite reverse; }
+
+  /* ---------- Orbital system ---------- */
+  .orbit {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: var(--s); height: var(--s);
+    margin-left: calc(var(--s) / -2);
+    margin-top: calc(var(--s) / -2);
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.055);
+    animation: orbitSpin var(--d) linear infinite;
+  }
+  @keyframes orbitSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .orbit .planet {
+    position: absolute;
+    top: 50%; left: 0;
+    width: var(--ps, 9px); height: var(--ps, 9px);
+    margin-left: calc(var(--ps, 9px) / -2);
+    margin-top: calc(var(--ps, 9px) / -2);
+    border-radius: 50%;
+    background: var(--pc, #22D3EE);
+    box-shadow: 0 0 14px 1px var(--pc, #22D3EE);
+  }
+  .orbit .planet::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--pc, #22D3EE) 0%, transparent 70%);
+    opacity: .28;
+  }
+
+  @keyframes corePulse {
+    0%, 100% { transform: scale(1); opacity: .85; }
+    50% { transform: scale(1.16); opacity: 1; }
+  }
+  .core-pulse { animation: corePulse 4.2s ease-in-out infinite; }
+
+  /* ---------- Signal card entrance ---------- */
+  .signal-card {
+    animation: sigIn .55s cubic-bezier(.16,1,.3,1) both;
+  }
+  @keyframes sigIn {
+    from { opacity: 0; transform: translateY(-10px) scale(.985); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ---------- Card hover lift ---------- */
+  .lift {
+    transition: transform .5s cubic-bezier(.16,1,.3,1),
+                border-color .4s ease,
+                box-shadow .5s cubic-bezier(.16,1,.3,1);
+  }
+  .lift:hover {
+    transform: translateY(-4px);
+    border-color: rgba(34,211,238,0.22);
+    box-shadow: 0 24px 60px -24px rgba(34,211,238,0.30);
+  }
+
+  /* ---------- Cursor spotlight ---------- */
+  #cursorGlow {
+    position: fixed;
+    width: 520px; height: 520px;
+    margin-left: -260px; margin-top: -260px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(circle, rgba(34,211,238,0.055) 0%, rgba(124,92,255,0.035) 42%, transparent 70%);
+    transition: opacity .5s ease;
+    opacity: 0;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    #cursorGlow { opacity: 1; }
+  }
+
+  .gradient-text {
+    background: linear-gradient(100deg, #FFFFFF 0%, #CFFAFE 28%, #22D3EE 55%, #7C5CFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .tab-active {
+    background: rgba(34,211,238,0.10);
+    color: #67E8F9;
+    border-color: rgba(34,211,238,0.35) !important;
+  }
+
+  .tier-pop {
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(34,211,238,0.10), transparent 70%),
+      linear-gradient(180deg, rgba(13,18,26,0.95), rgba(10,14,20,0.92));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+    }
+  }
+</style>
+</head>
+
+<body class="bg-obsidian text-slate-300 font-sans antialiased relative">
+
+<!-- ══════════════════════════════════════════════════════════════
+     CINEMATIC PRELOADER
+═══════════════════════════════════════════════════════════════ -->
+<div id="preloader" class="fixed inset-0 z-[200] bg-[#05070A] flex items-center justify-center overflow-hidden">
+  <!-- ambient -->
+  <div class="absolute inset-0 vignette opacity-70"></div>
+  <div class="absolute inset-0 grid-bg opacity-40"></div>
+
+  <div class="relative w-full max-w-[440px] px-7 sm:px-8">
+
+    <!-- Shield monogram -->
+    <div class="flex justify-center mb-9">
+      <div class="relative">
+        <div class="absolute inset-0 blur-2xl bg-accent/20 rounded-full scale-90"></div>
+        <svg width="118" height="130" viewBox="0 0 120 132" fill="none" class="relative">
+          <defs>
+            <linearGradient id="preGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22D3EE"/>
+              <stop offset="55%" stop-color="#4F8CFF"/>
+              <stop offset="100%" stop-color="#7C5CFF"/>
+            </linearGradient>
+            <filter id="preGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="3.4" result="b"/>
+              <feMerge>
+                <feMergeNode in="b"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path id="preShieldPath"
+                d="M60 4 L112 26 V66 C112 96 88 118 60 128 C32 118 8 96 8 66 V26 Z"
+                fill="rgba(34,211,238,0.035)"
+                stroke="url(#preGrad)"
+                stroke-width="2"
+                filter="url(#preGlow)"/>
+          <path id="preShieldInner"
+                d="M60 16 L100 33 V66 C100 89 82 107 60 116 C38 107 20 89 20 66 V33 Z"
+                fill="none"
+                stroke="rgba(124,92,255,0.38)"
+                stroke-width="1"/>
+          <path id="preMonogram"
+                d="M42 46 H78 L44 88 H80"
+                fill="none"
+                stroke="url(#preGrad)"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                filter="url(#preGlow)"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Brand -->
+    <div class="text-center mb-7">
+      <h1 class="font-display text-[22px] sm:text-[26px] font-bold tracking-[0.42em] text-white pl-[0.42em]">ZERODIAX</h1>
+      <p class="mt-2 font-mono text-[9.5px] tracking-[0.42em] text-slate-500 pl-[0.42em]">ZERO SYNDICATE VIP</p>
+    </div>
+
+    <!-- Terminal log -->
+    <div id="bootLog" class="h-[124px] overflow-hidden space-y-1.5 mb-6 px-0.5"></div>
+
+    <!-- Progress -->
+    <div class="flex items-center gap-3">
+      <div class="flex-1 h-[2px] bg-white/[0.07] rounded-full overflow-hidden">
+        <div id="bootBar" class="h-full w-0 rounded-full bg-gradient-to-r from-accent via-[#4F8CFF] to-neon transition-[width] duration-300 ease-out"></div>
+      </div>
+      <span id="bootPct" class="font-mono text-[10px] text-slate-500 tabular-nums w-9 text-right">000</span>
+    </div>
+
+    <p class="mt-6 text-center font-mono text-[9px] tracking-[0.3em] text-slate-700">
+      VALETAX PARTNER #1682343
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     AMBIENT BACKGROUND LAYERS
+═══════════════════════════════════════════════════════════════ -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+  <div class="absolute inset-0 vignette"></div>
+  <div class="absolute inset-0 grid-bg opacity-60"></div>
+  <div class="absolute inset-0 noise"></div>
+</div>
+<div id="cursorGlow"></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════════════════════ -->
+<header class="fixed top-0 inset-x-0 z-50 transition-all duration-500" id="header">
+  <div class="absolute inset-0 bg-obsidian/70 backdrop-blur-xl border-b border-white/[0.055] opacity-0 transition-opacity duration-500" id="headerBg"></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="relative">
+          <svg width="28" height="31" viewBox="0 0 120 132" fill="none" class="transition-transform duration-500 group-hover:scale-105">
+            <defs>
+              <linearGradient id="navGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#22D3EE"/>
+                <stop offset="100%" stop-color="#7C5CFF"/>
+              </linearGradient>
+            </defs>
+            <path d="M60 4 L112 26 V66 C112 96 88 118 60 128 C32 118 8 96 8 66 V26 Z"
+                  fill="rgba(34,211,238,0.06)" stroke="url(#navGrad)" stroke-width="7"/>
+            <path d="M42 46 H78 L44 88 H80" fill="none" stroke="url(#navGrad)"
+                  stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="leading-none">
+          <div class="font-display font-bold text-[13.5px] tracking-[0.26em] text-white">ZERODIAX</div>
+          <div class="font-mono text-[7.5px] tracking-[0.3em] text-slate-600 mt-1">ZERO SYNDICATE VIP</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="#terminal" class="px-3.5 py-2 text-[12.5px] font-medium text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]">Terminal</a>
+        <a href="#astro" class="px-3.5 py-2 text-[12.5px] font-medium text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]">Astro-Sync</a>
+        <a href="#tiers" class="px-3.5 py-2 text-[12.5px] font-medium text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]">Tiers</a>
+        <a href="#partner" class="px-3.5 py-2 text-[12.5px] font-medium text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]">Partner</a>
+      </nav>
+
+      <!-- Right -->
+      <div class="flex items-center gap-2.5">
+        <div class="hidden sm:flex items-center gap-2 rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 text-emerald-400 pulse-dot"></span>
+          <span class="font-mono text-[9.5px] tracking-[0.16em] text-slate-400">SYSTEM ONLINE</span>
+        </div>
+        <a href="#access" class="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-accent to-neon px-4 py-2 text-[11.5px] font-semibold text-[#04141A] shadow-glow transition-transform duration-300 hover:scale-[1.035] active:scale-[0.98]">
+          Request Access
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button id="menuBtn" aria-label="Menu" class="lg:hidden w-9 h-9 grid place-items-center rounded-lg border border-white/[0.08] bg-white/[0.03] text-slate-300">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden lg:hidden pb-4">
+      <div class="rounded-2xl border border-white/[0.07] bg-panel2/95 backdrop-blur-xl p-2 space-y-0.5">
+        <a href="#terminal" class="block px-4 py-2.5 rounded-xl text-[13px] text-slate-300 hover:bg-white/[0.05]">Terminal</a>
+        <a href="#astro" class="block px-4 py-2.5 rounded-xl text-[13px] text-slate-300 hover:bg-white/[0.05]">Astro-Sync</a>
+        <a href="#tiers" class="block px-4 py-2.5 rounded-xl text-[13px] text-slate-300 hover:bg-white/[0.05]">Tiers</a>
+        <a href="#partner" class="block px-4 py-2.5 rounded-xl text-[13px] text-slate-300 hover:bg-white/[0.05]">Partner</a>
+        <a href="#access" class="block px-4 py-2.5 rounded-xl text-[13px] font-semibold text-accent hover:bg-white/[0.05]">Request Access →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticker tape -->
+  <div class="relative border-b border-white/[0.055] bg-[#070A0F]/85 backdrop-blur-xl">
+    <div class="tape-mask overflow-hidden h-8 flex items-center">
+      <div class="tape-track" id="tapeTrack"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════════════════════════ -->
+<main class="relative z-10 pt-[104px]">
+
+  <!-- ─────────────────────────── HERO ─────────────────────────── -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 pt-14 pb-20 lg:pt-24 lg:pb-28">
+      <div class="grid lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+
+        <!-- Left -->
+        <div class="lg:col-span-7">
+          <div data-boot-reveal class="inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.03] pl-1.5 pr-3.5 py-1.5 mb-7">
+            <span class="rounded-full bg-gradient-to-r from-accent to-neon px-2.5 py-[3px] font-mono text-[8.5px] font-bold tracking-[0.14em] text-[#04141A]">OFFICIAL</span>
+            <span class="font-mono text-[10px] tracking-[0.14em] text-slate-400">VALETAX PARTNER #1682343</span>
+          </div>
+
+          <h1 data-boot-reveal class="font-display font-bold leading-[0.92] tracking-[-0.03em] text-[54px] sm:text-[76px] lg:text-[86px] gradient-text">
+            ZERODIAX
+          </h1>
+
+          <p data-boot-reveal class="mt-4 font-mono text-[11px] sm:text-[12.5px] tracking-[0.46em] text-accent/85 pl-1">
+            ZERO SYNDICATE VIP
+          </p>
+
+          <p data-boot-reveal class="mt-7 max-w-[560px] text-[15px] sm:text-[16.5px] leading-relaxed text-slate-400">
+            An institutional-grade intelligence terminal fusing
+            <span class="text-slate-200 font-medium">real-time orderflow</span>,
+            <span class="text-slate-200 font-medium">astrophysics-derived volatility models</span>, and
+            <span class="text-slate-200 font-medium">zero-latency execution</span> — built for operators who refuse to trade blind.
+          </p>
+
+          <div data-boot-reveal class="mt-9 flex flex-wrap items-center gap-3">
+            <a href="#terminal" class="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-neon px-6 py-3.5 text-[13px] font-semibold text-[#04141A] shadow-glow transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
+              Launch Terminal
+              <svg class="transition-transform duration-300 group-hover:translate-x-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#tiers" class="inline-flex items-center gap-2 rounded-xl border border-white/[0.10] bg-white/[0.025] px-6 py-3.5 text-[13px] font-semibold text-slate-200 transition-all duration-300 hover:border-white/25 hover:bg-white/[0.06]">
+              View Syndicate Tiers
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div data-boot-reveal class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/[0.07] bg-white/[0.05]">
+            <div class="bg-[#080B11]/90 px-4 py-4">
+              <div class="font-display text-[22px] font-semibold text-white tabular-nums">
+                <span data-count="94.2" data-suffix="%">0%</span>
+              </div>
+              <div class="mt-1 font-mono text-[8.5px] tracking-[0.18em] text-slate-600">SIGNAL ACCURACY</div>
+            </div>
+            <div class="bg-[#080B11]/90 px-4 py-4">
+              <div class="font-display text-[22px] font-semibold text-white tabular-nums">
+                <span data-count="12840" data-suffix="">0</span>
+              </div>
+              <div class="mt-1 font-mono text-[8.5px] tracking-[0.18em] text-slate-600">SIGNALS DISPATCHED</div>
+            </div>
+            <div class="bg-[#080B11]/90 px-4 py-4">
+              <div class="font-display text-[22px] font-semibold text-white tabular-nums">
+                <span data-count="3.8" data-suffix="R" data-prefix="1:">0</span>
+              </div>
+              <div class="mt-1 font-mono text-[8.5px] tracking-[0.18em] text-slate-600">AVG RISK : REWARD</div>
+            </div>
+            <div class="bg-[#080B11]/90 px-4 py-4">
+              <div class="font-display text-[22px] font-semibold text-white tabular-nums">
+                <span data-count="4120" data-suffix="">0</span>
+              </div>
+              <div class="mt-1 font-mono text-[8.5px] tracking-[0.18em] text-slate-600">SYNDICATE OPERATORS</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right — Uplink card -->
+        <div class="lg:col-span-5" data-boot-reveal>
+          <div class="relative">
+            <div class="absolute -inset-5 rounded-[42px] bg-gradient-to-tr from-accent/12 via-transparent to-neon/14 blur-3xl"></div>
+
+            <div class="relative rounded-3xl border border-white/[0.075] bg-panel/75 backdrop-blur-2xl p-6 sm:p-7 overflow-hidden">
+              <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/45 to-transparent"></div>
+
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-mono text-[9px] tracking-[0.28em] text-slate-500">SYNDICATE UPLINK</span>
+                <span class="flex items-center gap-1.5 font-mono text-[9px] tracking-[0.16em] text-emerald-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 text-emerald-400 pulse-dot"></span>LIVE
+                </span>
+              </div>
+
+              <!-- Orbital shield -->
+              <div class="relative grid place-items-center py-9">
+                <div class="absolute w-[210px] h-[210px] rounded-full border border-white/[0.05] spin-slow"></div>
+                <div class="absolute w-[150px] h-[150px] rounded-full border border-dashed border-white/[0.07] spin-slow-r"></div>
+                <div class="absolute w-[210px] h-[210px] rounded-full spin-slow">
+                  <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_12px_2px_rgba(34,211,238,0.8)]"></span>
+                </div>
+                <div class="absolute w-[150px] h-[150px] rounded-full spin-slow-r">
+                  <span class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-neon shadow-[0_0_12px_2px_rgba(124,92,255,0.8)]"></span>
+                </div>
+
+                <div class="absolute w-24 h-24 rounded-full bg-accent/12 blur-2xl"></div>
+
+                <svg width="88" height="97" viewBox="0 0 120 132" fill="none" class="relative">
+                  <defs>
+                    <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#22D3EE"/>
+                      <stop offset="55%" stop-color="#4F8CFF"/>
+                      <stop offset="100%" stop-color="#7C5CFF"/>
+                    </linearGradient>
+                    <filter id="heroGlow" x="-60%" y="-60%" width="220%" height="220%">
+                      <feGaussianBlur stdDeviation="2.6" result="b"/>
+                      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                  </defs>
+                  <path d="M60 4 L112 26 V66 C112 96 88 118 60 128 C32 118 8 96 8 66 V26 Z"
+                        fill="rgba(34,211,238,0.04)" stroke="url(#heroGrad)" stroke-width="3" filter="url(#heroGlow)"/>
+                  <path d="M60 16 L100 33 V66 C100 89 82 107 60 116 C38 107 20 89 20 66 V33 Z"
+                        fill="none" stroke="rgba(124,92,255,0.32)" stroke-width="1.4"/>
+                  <path d="M42 46 H78 L44 88 H80" fill="none" stroke="url(#heroGrad)" stroke-width="6.5"
+                        stroke-linecap="round" stroke-linejoin="round" filter="url(#heroGlow)"/>
+                </svg>
+              </div>
+
+              <!-- Micro metrics -->
+              <div class="grid grid-cols-2 gap-2.5">
+                <div class="rounded-xl border border-white/[0.055] bg-white/[0.02] px-3.5 py-3">
+                  <div class="font-mono text-[8px] tracking-[0.2em] text-slate-600">LATENCY</div>
+                  <div class="mt-1 font-mono text-[13px] text-slate-100 tabular-nums">12 <span class="text-[9px] text-slate-500">ms</span></div>
+                </div>
+                <div class="rounded-xl border border-white/[0.055] bg-white/[0.02] px-3.5 py-3">
+                  <div class="font-mono text-[8px] tracking-[0.2em] text-slate-600">UPTIME</div>
+                  <div class="mt-1 font-mono text-[13px] text-slate-100 tabular-nums">99.98<span class="text-[9px] text-slate-500">%</span></div>
+                </div>
+                <div class="rounded-xl border border-white/[0.055] bg-white/[0.02] px-3.5 py-3">
+                  <div class="font-mono text-[8px] tracking-[0.2em] text-slate-600">FEED</div>
+                  <div class="mt-1 font-mono text-[13px] text-emerald-400 tabular-nums">SYNCED</div>
+                </div>
+                <div class="rounded-xl border border-white/[0.055] bg-white/[0.02] px-3.5 py-3">
+                  <div class="font-mono text-[8px] tracking-[0.2em] text-slate-600">CLEARANCE</div>
+                  <div class="mt-1 font-mono text-[13px] text-accent tabular-nums">VIP-01</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── TERMINAL ─────────────────────────── -->
+  <section id="terminal" class="relative py-16 lg:py-24 border-t border-white/[0.05]">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-9" data-reveal>
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="h-px w-7 bg-accent/60"></span>
+            <span class="font-mono text-[9.5px] tracking-[0.32em] text-accent/80">LIVE TERMINAL</span>
+          </div>
+          <h2 class="font-display text-[30px] sm:text-[42px] font-semibold tracking-tight text-white leading-[1.05]">
+            Market Intelligence<br class="hidden sm:block" /> <span class="text-slate-500">Engine</span>
+          </h2>
+        </div>
+        <div class="flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-white/[0.025] px-4 py-2.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 text-emerald-400 pulse-dot"></span>
+          <span class="font-mono text-[10px] tracking-[0.14em] text-slate-400">DATA STREAM ACTIVE</span>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-5">
+
+        <!-- Chart card -->
+        <div class="lg:col-span-8" data-reveal>
+          <div class="rounded-2xl border border-white/[0.075] bg-panel/70 backdrop-blur-xl overflow-hidden">
+
+            <!-- Chart header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 px-5 py-4 border-b border-white/[0.055]">
+              <div class="flex items-center gap-4">
+                <div>
+                  <div class="flex items-baseline gap-2.5">
+                    <span class="font-display text-[17px] font-semibold text-white tracking-tight" id="chartPairLabel">XAU/USD</span>
+                    <span class="font-mono text-[8.5px] tracking-[0.16em] text-slate-600">SPOT</span>
+                  </div>
+                  <div class="flex items-baseline gap-2.5 mt-1.5">
+                    <span class="font-mono text-[20px] font-medium text-white tabular-nums" id="chartPrice">2,384.40</span>
+                    <span class="font-mono text-[11px] tabular-nums" id="chartChange">+0.84%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-1 rounded-xl border border-white/[0.07] bg-white/[0.02] p-1" id="pairTabs">
+                <button data-pair="XAU/USD" class="tab-active px-3 py-1.5 rounded-lg font-mono text-[10px] tracking-wide border border-transparent text-slate-400 transition-all">XAU/USD</button>
+                <button data-pair="BTC/USDT" class="px-3 py-1.5 rounded-lg font-mono text-[10px] tracking-wide border border-transparent text-slate-400 hover:text-white transition-all">BTC/USDT</button>
+                <button data-pair="ETH/USDT" class="px-3 py-1.5 rounded-lg font-mono text-[10px] tracking-wide border border-transparent text-slate-400 hover:text-white transition-all">ETH/USDT</button>
+                <button data-pair="NAS100" class="px-3 py-1.5 rounded-lg font-mono text-[10px] tracking-wide border border-transparent text-slate-400 hover:text-white transition-all">NAS100</button>
+              </div>
+            </div>
+
+            <!-- Canvas -->
+            <div class="relative px-2 pt-3 pb-1">
+              <canvas id="mainChart" class="w-full h-[300px] sm:h-[380px] block"></canvas>
+            </div>
+
+            <!-- Chart footer -->
+            <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-3.5 border-t border-white/[0.055] bg-white/[0.012]">
+              <div class="flex items-center gap-5 font-mono text-[9.5px] tracking-[0.1em] text-slate-600">
+                <span>O <span class="text-slate-300" id="ohlcO">—</span></span>
+                <span>H <span class="text-slate-300" id="ohlcH">—</span></span>
+                <span>L <span class="text-slate-300" id="ohlcL">—</span></span>
+                <span>C <span class="text-slate-300" id="ohlcC">—</span></span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span class="font-mono text-[9px] tracking-[0.14em] text-slate-600">REALTIME SIMULATION</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="lg:col-span-4 space-y-5">
+
+          <!-- Watchlist -->
+          <div data-reveal class="rounded-2xl border border-white/[0.075] bg-panel/70 backdrop-blur-xl overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.055]">
+              <span class="font-mono text-[9px] tracking-[0.26em] text-slate-500">WATCHLIST</span>
+              <span class="font-mono text-[9px] text-slate-700">24H</span>
+            </div>
+            <div id="marketList" class="divide-y divide-white/[0.04]"></div>
+          </div>
+
+          <!-- Signals -->
+          <div data-reveal class="rounded-2xl border border-white/[0.075] bg-panel/70 backdrop-blur-xl overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.055]">
+              <span class="font-mono text-[9px] tracking-[0.26em] text-slate-500">SIGNAL FEED</span>
+              <span class="flex items-center gap-1.5 font-mono text-[9px] text-emerald-400">
+                <span class="w-1 h-1 rounded-full bg-emerald-400 text-emerald-400 pulse-dot"></span>LIVE
+              </span>
+            </div>
+            <div id="signalFeed" class="p-2.5 space-y-2 max-h-[320px] overflow-hidden"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── ASTRO-SYNC ─────────────────────────── -->
+  <section id="astro" class="relative py-16 lg:py-24 border-t border-white/[0.05]">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+        <!-- Orbital visual -->
+        <div class="lg:col-span-5 order-2 lg:order-1" data-reveal>
+          <div class="relative mx-auto w-full max-w-[400px] aspect-square">
+
+            <!-- glow -->
+            <div class="absolute inset-[18%] rounded-full bg-accent/10 blur-3xl"></div>
+            <div class="absolute inset-[30%] rounded-full bg-neon/10 blur-2xl"></div>
+
+            <!-- static rings -->
+            <div class="absolute inset-0 rounded-full border border-white/[0.05]"></div>
+            <div class="absolute inset-[12%] rounded-full border border-white/[0.035]"></div>
+
+            <!-- orbits -->
+            <div class="orbit" style="--s:100%;--d:34s;--ps:10px;--pc:#22D3EE"><span class="planet"></span></div>
+            <div class="orbit" style="--s:76%;--d:22s;--ps:8px;--pc:#7C5CFF"><span class="planet"></span></div>
+            <div class="orbit" style="--s:54%;--d:14s;--ps:7px;--pc:#4F8CFF"><span class="planet"></span></div>
+            <div class="orbit" style="--s:34%;--d:9s;--ps:6px;--pc:#F0ABFC"><span class="planet"></span></div>
+
+            <!-- core -->
+            <div class="absolute inset-0 grid place-items-center">
+              <div class="core-pulse relative w-16 h-16 rounded-full bg-gradient-to-br from-accent via-[#4F8CFF] to-neon shadow-[0_0_50px_-4px_rgba(34,211,238,0.65)]">
+                <div class="absolute inset-[3px] rounded-full bg-obsidian/85 grid place-items-center">
+                  <span class="font-display text-[13px] font-bold text-white tracking-tight" id="astroScoreCore">87</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- crosshair ticks -->
+            <div class="absolute left-1/2 top-0 -translate-x-1/2 w-px h-2.5 bg-white/15"></div>
+            <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-px h-2.5 bg-white/15"></div>
+            <div class="absolute top-1/2 left-0 -translate-y-1/2 h-px w-2.5 bg-white/15"></div>
+            <div class="absolute top-1/2 right-0 -translate-y-1/2 h-px w-2.5 bg-white/15"></div>
+          </div>
+        </div>
+
+        <!-- Copy -->
+        <div class="lg:col-span-7 order-1 lg:order-2" data-reveal>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="h-px w-7 bg-neon/60"></span>
+            <span class="font-mono text-[9.5px] tracking-[0.32em] text-neon/85">ASTRO-SYNC ENGINE</span>
+          </div>
+
+          <h2 class="font-display text-[30px] sm:text-[42px] font-semibold tracking-tight text-white leading-[1.06]">
+            Orbital Mechanics<br class="hidden sm:block" />
+            <span class="text-slate-500">Applied to Liquidity</span>
+          </h2>
+
+          <p class="mt-6 max-w-[560px] text-[15px] leading-relaxed text-slate-400">
+            Gravitational harmonics, lunar tidal forcing, and solar flux modulation produce measurable
+            regimes of market volatility. Our Astro-Sync engine continuously maps these planetary
+            derivatives into a single composite index — giving operators a macro-volatility prior
+            before the first candle prints.
+          </p>
+
+          <div class="mt-9 grid sm:grid-cols-2 gap-3.5">
+
+            <div class="lift rounded-2xl border border-white/[0.075] bg-panel/60 backdrop-blur-xl p-5">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[8.5px] tracking-[0.2em] text-slate-600">ASTRO-SYNC INDEX</span>
+                <span class="font-mono text-[9px] text-accent" id="astroTrend">▲ RISING</span>
+              </div>
+              <div class="mt-2 font-display text-[28px] font-semibold text-white tabular-nums" id="astroScore">87.4</div>
+              <div class="mt-3 h-1 rounded-full bg-white/[0.06] overflow-hidden">
+                <div class="h-full rounded-full bg-gradient-to-r from-accent to-neon transition-all duration-1000" id="astroBar" style="width:87%"></div>
+              </div>
+            </div>
+
+            <div class="lift rounded-2xl border border-white/[0.075] bg-panel/60 backdrop-blur-xl p-5">
+              <div class="font-mono text-[8.5px] tracking-[0.2em] text-slate-600">LUNAR PHASE</div>
+              <div class="mt-2 font-display text-[20px] font-semibold text-white" id="lunarPhase">Waxing Gibbous</div>
+              <div class="mt-3 flex items-center gap-1.5">
+                <div class="h-1 flex-1 rounded-full bg-white/[0.06] overflow-hidden">
+                  <div class="h-full rounded-full bg-neon/80 transition-all duration-1000" id="lunarBar" style="width:76%"></div>
+                </div>
+                <span class="font-mono text-[9px] text-slate-500 tabular-nums" id="lunarPct">76%</span>
+              </div>
+            </div>
+
+            <div class="lift rounded-2xl border border-white/[0.075] bg-panel/60 backdrop-blur-xl p-5">
+              <div class="font-mono text-[8.5px] tracking-[0.2em] text-slate-600">SOLAR FLUX</div>
+              <div class="mt-2 font-display text-[20px] font-semibold text-white tabular-nums">
+                <span id="solarFlux">142</span> <span class="text-[11px] text-slate-500 font-mono">sfu</span>
+              </div>
+              <div class="mt-2 font-mono text-[9px] text-slate-600">F10.7 cm RADIO EMISSION</div>
+            </div>
+
+            <div class="lift rounded-2xl border border-white/[0.075] bg-panel/60 backdrop-blur-xl p-5">
+              <div class="font-mono text-[8.5px] tracking-[0.2em] text-slate-600">GEOMAG Kp</div>
+              <div class="mt-2 font-display text-[20px] font-semibold text-white tabular-nums">
+                <span id="geomag">2.3</span> <span class="text-[11px] text-slate-500 font-mono">index</span>
+              </div>
+              <div class="mt-2 font-mono text-[9px] text-emerald-400">QUIET · LOW NOISE REGIME</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── TIERS ─────────────────────────── -->
+  <section id="tiers" class="relative py-16 lg:py-24 border-t border-white/[0.05]">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+
+      <div class="text-center max-w-[620px] mx-auto mb-14" data-reveal>
+        <div class="flex items-center justify-center gap-2 mb-3">
+          <span class="h-px w-7 bg-accent/60"></span>
+          <span class="font-mono text-[9.5px] tracking-[0.32em] text-accent/80">SYNDICATE CLEARANCE</span>
+          <span class="h-px w-7 bg-accent/60"></span>
+        </div>
+        <h2 class="font-display text-[30px] sm:text-[42px] font-semibold tracking-tight text-white leading-[1.06]">
+          Choose Your <span class="text-slate-500">Clearance Level</span>
+        </h2>
+        <p class="mt-4 text-[14.5px] text-slate-500 leading-relaxed">
+          Every tier is routed through the Valetax liquidity bridge under
+          official partner code <span class="text-slate-300 font-mono text-[13px]">#1682343</span>.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <!-- Tier 1 -->
+        <div data-reveal class="lift rounded-3xl border border-white/[0.075] bg-panel/60 backdrop-blur-xl p-7 flex flex-col">
+          <div class="font-mono text-[9px] tracking-[0.28em] text-slate-500">TIER 01</div>
+          <h3 class="mt-3 font-display text-[22px] font-semibold text-white tracking-tight">OBSIDIAN</h3>
+          <p class="mt-2 text-[12.5px] text-slate-500 leading-relaxed">Entry-level awareness. Public flow only.</p>
+          <div class="mt-6 flex items-baseline gap-1.5">
+            <span class="font-display text-[34px] font-semibold text-white">$0</span>
+            <span class="font-mono text-[10px] text-slate-600">/ FOREVER</span>
+          </div>
+          <div class="my-6 h-px bg-white/[0.06]"></div>
+          <ul class="space-y-3 text-[12.5px] text-slate-400 flex-1">
+            <li class="flex gap-2.5"><span class="text-accent/70 mt-[2px]">✓</span>Delayed public signal feed</li>
+            <li class="flex gap-2.5"><span class="text-accent/70 mt-[2px]">✓</span>Read-only terminal access</li>
+            <li class="flex gap-2.5"><span class="text-accent/70 mt-[2px]">✓</span>Community broadcast channel</li>
+            <li class="flex gap-2.5 text-slate-700"><span class="mt-[2px]">✕</span>Astro-Sync engine</li>
+            <li class="flex gap-2.5 text-slate-700"><span class="mt-[2px]">✕</span>Valetax rebate routing</li>
+          </ul>
+          <a href="#access" class="mt-7 block text-center rounded-xl border border-white/[0.10] bg-white/[0.025] py-3 text-[12.5px] font-semibold text-slate-200 transition-all hover:bg-white/[0.06] hover:border-white/25">
+            Start Free
+          </a>
+        </div>
+
+        <!-- Tier 2 (featured) -->
+        <div data-reveal class="relative rounded-3xl border border-accent/25 tier-pop backdrop-blur-xl p-7 flex flex-col shadow-glow md:-mt-4 md:mb-[-16px]">
+          <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent"></div>
+          <div class="absolute top-5 right-5 rounded-full bg-gradient-to-r from-accent to-neon px-2.5 py-1 font-mono text-[8px] font-bold tracking-[0.16em] text-[#04141A]">MOST CHOSEN</div>
+
+          <div class="font-mono text-[9px] tracking-[0.28em] text-accent/80">TIER 02</div>
+          <h3 class="mt-3 font-display text-[22px] font-semibold text-white tracking-tight">SYNDICATE VIP</h3>
+          <p class="mt-2 text-[12.5px] text-slate-400 leading-relaxed">Full intelligence stack + priority execution.</p>
+          <div class="mt-6 flex items-baseline gap-1.5">
+            <span class="font-display text-[34px] font-semibold text-white">$89</span>
+            <span class="font-mono text-[10px] text-slate-500">/ MONTH</span>
+          </div>
+          <div class="my-6 h-px bg-white/[0.08]"></div>
+          <ul class="space-y-3 text-[12.5px] text-slate-300 flex-1">
+            <li class="flex gap-2.5"><span class="text-accent mt-[2px]">✓</span>Realtime signal dispatch (zero delay)</li>
+            <li class="flex gap-2.5"><span class="text-accent mt-[2px]">✓</span>Full Astro-Sync volatility engine</li>
+            <li class="flex gap-2.5"><span class="text-accent mt-[2px]">✓</span>Valetax fee rebate routing</li>
+            <li class="flex gap-2.5"><span class="text-accent mt-[2px]">✓</span>Orderflow heatmap + depth matrix</li>
+            <li class="flex gap-2.5"><span class="text-accent mt-[2px]">✓</span>Private syndicate war-room</li>
+          </ul>
+          <a href="#access" class="mt-7 block text-center rounded-xl bg-gradient-to-r from-accent to-neon py-3 text-[12.5px] font-bold text-[#04141A] shadow-glow transition-transform hover:scale-[1.02] active:scale-[0.98]">
+            Request VIP Access
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div data-reveal class="lift rounded-3xl border border-white/[0.075] bg-panel/60 backdrop-blur-xl p-7 flex flex-col">
+          <div class="font-mono text-[9px] tracking-[0.28em] text-slate-500">TIER 03</div>
+          <h3 class="mt-3 font-display text-[22px] font-semibold text-white tracking-tight">SINGULARITY</h3>
+          <p class="mt-2 text-[12.5px] text-slate-500 leading-relaxed">Bespoke desk. Private capital only.</p>
+          <div class="mt-6 flex items-baseline gap-1.5">
+            <span class="font-display text-[34px] font-semibold text-white">$249</span>
+            <span class="font-mono text-[10px] text-slate-600">/ MONTH</span>
+          </div>
+          <div class="my-6 h-px bg-white/[0.06]"></div>
+          <ul class="space-y-3 text-[12.5px] text-slate-400 flex-1">
+            <li class="flex gap-2.5"><span class="text-neon/80 mt-[2px]">✓</span>Everything in Syndicate VIP</li>
+            <li class="flex gap-2.5"><span class="text-neon/80 mt-[2px]">✓</span>1:1 desk strategy calibration</li>
+            <li class="flex gap-2.5"><span class="text-neon/80 mt-[2px]">✓</span>Custom algorithmic signal tuning</li>
+            <li class="flex gap-2.5"><span class="text-neon/80 mt-[2px]">✓</span>Dedicated Valetax account manager</li>
+            <li class="flex gap-2.5"><span class="text-neon/80 mt-[2px]">✓</span>Institutional rebate structure</li>
+          </ul>
+          <a href="#access" class="mt-7 block text-center rounded-xl border border-neon/30 bg-neon/[0.07] py-3 text-[12.5px] font-semibold text-neon transition-all hover:bg-neon/[0.14] hover:border-neon/50">
+            Apply For Desk
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── PARTNER ─────────────────────────── -->
+  <section id="partner" class="relative py-16 lg:py-24 border-t border-white/[0.05]">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div data-reveal class="relative rounded-3xl border border-white/[0.075] bg-panel/60 backdrop-blur-xl overflow-hidden">
+        <div class="absolute inset-0 opacity-60 pointer-events-none"
+             style="background: radial-gradient(ellipse 60% 100% at 0% 0%, rgba(34,211,238,0.10), transparent 60%), radial-gradient(ellipse 60% 100% at 100% 100%, rgba(124,92,255,0.12), transparent 60%);"></div>
+
+        <div class="relative grid lg:grid-cols-12 gap-10 p-7 sm:p-10 lg:p-12 items-center">
+
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 text-emerald-400 pulse-dot"></span>
+              <span class="font-mono text-[9px] tracking-[0.2em] text-slate-400">OFFICIAL PARTNERSHIP VERIFIED</span>
+            </div>
+
+            <h2 class="font-display text-[28px] sm:text-[38px] font-semibold tracking-tight text-white leading-[1.08]">
+              Valetax Official Partner<br class="hidden sm:block" />
+              <span class="text-slate-500">Code</span> <span class="gradient-text font-mono text-[26px] sm:text-[34px]">#1682343</span>
+            </h2>
+
+            <p class="mt-5 max-w-[540px] text-[14.5px] leading-relaxed text-slate-400">
+              All Zerodiax executions are routed through the Valetax institutional liquidity bridge.
+              Registering under partner code <span class="text-slate-200 font-mono">#1682343</span> unlocks
+              syndicate-tier spreads, priority withdrawal processing, and rebate routing directly into your VIP ledger.
+            </p>
+
+            <div class="mt-7 flex flex-wrap gap-2.5">
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 font-mono text-[9.5px] tracking-[0.1em] text-slate-400">ECN SPREADS</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 font-mono text-[9.5px] tracking-[0.1em] text-slate-400">RAW LIQUIDITY</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 font-mono text-[9.5px] tracking-[0.1em] text-slate-400">SEGREGATED FUNDS</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 font-mono text-[9.5px] tracking-[0.1em] text-slate-400">SUB-15MS FILLS</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl border border-white/[0.08] bg-[#070A0F]/80 p-6">
+              <div class="font-mono text-[8.5px] tracking-[0.24em] text-slate-600">PARTNER IDENTIFIER</div>
+              <div class="mt-2.5 font-display text-[30px] font-bold tracking-[0.06em] gradient-text">#1682343</div>
+
+              <div class="mt-6 space-y-2.5">
+                <div class="flex items-center justify-between rounded-lg border border-white/[0.055] bg-white/[0.02] px-3.5 py-2.5">
+                  <span class="font-mono text-[9px] tracking-[0.14em] text-slate-600">STATUS</span>
+                  <span class="font-mono text-[10px] text-emerald-400">ACTIVE</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg border border-white/[0.055] bg-white/[0.02] px-3.5 py-2.5">
+                  <span class="font-mono text-[9px] tracking-[0.14em] text-slate-600">REBATE</span>
+                  <span class="font-mono text-[10px] text-accent">TIER-1 ROUTED</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg border border-white/[0.055] bg-white/[0.02] px-3.5 py-2.5">
+                  <span class="font-mono text-[9px] tracking-[0.14em] text-slate-600">BRIDGE</span>
+                  <span class="font-mono text-[10px] text-slate-300">VALETAX-CORE</span>
+                </div>
+              </div>
+
+              <a href="#access" class="mt-6 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-neon py-3 text-[12.5px] font-bold text-[#04141A] shadow-glow transition-transform hover:scale-[1.02] active:scale-[0.98]">
+                Register With Code
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── ACCESS CTA ─────────────────────────── -->
+  <section id="access" class="relative py-16 lg:py-28 border-t border-white/[0.05]">
+    <div class="mx-auto max-w-3xl px-5 sm:px-8 text-center" data-reveal>
+
+      <div class="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent text-accent pulse-dot"></span>
+        <span class="font-mono text-[9px] tracking-[0.24em] text-slate-400">CLEARANCE QUEUE OPEN</span>
+      </div>
+
+      <h2 class="font-display text-[34px] sm:text-[52px] font-bold tracking-[-0.02em] leading-[1.02] text-white">
+        Enter the <span class="gradient-text">Zero Syndicate</span>
+      </h2>
+
+      <p class="mt-5 text-[15px] text-slate-400 leading-relaxed max-w-[520px] mx-auto">
+        Submit your operator handle. Access is granted in rolling cohorts to preserve
+        signal integrity and execution quality across the syndicate.
+      </p>
+
+      <form id="accessForm" class="mt-9 flex flex-col sm:flex-row gap-2.5 max-w-[500px] mx-auto">
+        <input id="accessInput" type="email" required placeholder="operator@domain.com"
+               class="flex-1 rounded-xl border border-white/[0.09] bg-white/[0.03] px-4 py-3.5 text-[13px] text-slate-200 placeholder:text-slate-600 outline-none transition-all focus:border-accent/45 focus:bg-white/[0.05] focus:ring-2 focus:ring-accent/15" />
+        <button type="submit"
+                class="rounded-xl bg-gradient-to-r from-accent to-neon px-6 py-3.5 text-[13px] font-bold text-[#04141A] shadow-glow transition-transform hover:scale-[1.03] active:scale-[0.98] whitespace-nowrap">
+          Request Access
+        </button>
+      </form>
+
+      <p id="accessNote" class="mt-4 font-mono text-[10px] tracking-[0.14em] text-slate-600 transition-colors">
+        ENCRYPTED SUBMISSION · NO SPAM · UNSUBSCRIBE ANYTIME
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════════ -->
+<footer class="relative z-10 border-t border-white/[0.06] bg-[#070A0F]/60">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-12">
+
+    <div class="grid md:grid-cols-12 gap-10">
+
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3">
+          <svg width="26" height="29" viewBox="0 0 120 132" fill="none">
+            <defs>
+              <linearGradient id="footGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#22D3EE"/>
+                <stop offset="100%" stop-color="#7C5CFF"/>
+              </linearGradient>
+            </defs>
+            <path d="M60 4 L112 26 V66 C112 96 88 118 60 128 C32 118 8 96 8 66 V26 Z"
+                  fill="rgba(34,211,238,0.05)" stroke="url(#footGrad)" stroke-width="7"/>
+            <path d="M42 46 H78 L44 88 H80" fill="none" stroke="url(#footGrad)"
+                  stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <div class="font-display font-bold text-[13px] tracking-[0.26em] text-white">ZERODIAX</div>
+            <div class="font-mono text-[7.5px] tracking-[0.3em] text-slate-600 mt-1">ZERO SYNDICATE VIP</div>
+          </div>
+        </div>
+        <p class="mt-5 max-w-[360px] text-[12px] leading-relaxed text-slate-600">
+          Precision market intelligence and execution infrastructure for the modern operator.
+          Official Valetax Partner <span class="text-slate-400 font-mono">#1682343</span>.
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <div class="font-mono text-[8.5px] tracking-[0.24em] text-slate-600 mb-4">TERMINAL</div>
+        <ul class="space-y-2.5 text-[12.5px] text-slate-500">
+          <li><a href="#terminal" class="hover:text-slate-200 transition-colors">Live Charts</a></li>
+          <li><a href="#terminal" class="hover:text-slate-200 transition-colors">Signal Feed</a></li>
+          <li><a href="#astro" class="hover:text-slate-200 transition-colors">Astro-Sync</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2">
+        <div class="font-mono text-[8.5px] tracking-[0.24em] text-slate-600 mb-4">SYNDICATE</div>
+        <ul class="space-y-2.5 text-[12.5px] text-slate-500">
+          <li><a href="#tiers" class="hover:text-slate-200 transition-colors">Tiers</a></li>
+          <li><a href="#partner" class="hover:text-slate-200 transition-colors">Partnership</a></li>
+          <li><a href="#access" class="hover:text-slate-200 transition-colors">Request Access</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3">
+        <div class="font-mono text-[8.5px] tracking-[0.24em] text-slate-600 mb-4">SYSTEM</div>
+        <div class="space-y-2.5">
+          <div class="flex items-center justify-between text-[12px]">
+            <span class="text-slate-600">Uplink</span>
+            <span class="font-mono text-emerald-400 text-[10.5px]">ONLINE</span>
+          </div>
+          <div class="flex items-center justify-between text-[12px]">
+            <span class="text-slate-600">Server Time</span>
+            <span class="font-mono text-slate-400 text-[10.5px] tabular-nums" id="serverClock">--:--:--</span>
+          </div>
+          <div class="flex items-center justify-between text-[12px]">
+            <span class="text-slate-600">Partner</span>
+            <span class="font-mono text-accent text-[10.5px]">#1682343</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-7 border-t border-white/[0.06]">
+      <p class="text-[10.5px] leading-relaxed text-slate-700 max-w-4xl">
+        <span class="text-slate-500 font-semibold">RISK DISCLOSURE —</span>
+        Trading leveraged instruments carries a high level of risk and may not be suitable for all investors.
+        Past performance is not indicative of future results. Signal accuracy figures are historical simulations
+        and do not constitute a guarantee. You may lose more than your initial deposit. Zerodiax provides
+        analytical tools and educational intelligence only; nothing herein constitutes financial advice.
+        All execution services are provided by Valetax under official partner code #1682343.
+        Please ensure you fully understand the risks involved and seek independent advice if necessary.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <p class="font-mono text-[9.5px] tracking-[0.16em] text-slate-700">
+          © 2026 ZERODIAX · ZERO SYNDICATE VIP · ALL RIGHTS RESERVED
+        </p>
+        <div class="flex items-center gap-5 font-mono text-[9.5px] tracking-[0.14em] text-slate-700">
+          <a href="#" class="hover:text-slate-400 transition-colors">PRIVACY</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">TERMS</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">RISK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[150] pointer-events-none opacity-0 translate-y-3 transition-all duration-500">
+  <div class="rounded-xl border border-accent/30 bg-[#0A0E14]/95 backdrop-blur-xl px-5 py-3 shadow-glow">
+    <div class="flex items-center gap-2.5">
+      <span class="w-1.5 h-1.5 rounded-full bg-accent text-accent"></span>
+      <span class="font-mono text-[11px] tracking-[0.08em] text-slate-200" id="toastMsg">Access request received.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     APPLICATION SCRIPT
+═══════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ═══════════════════════════════════════════════════════════
+     0 · UTILITIES
+  ═══════════════════════════════════════════════════════════ */
+  const $  = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const rand = (a, b) => a + Math.random() * (b - a);
+
+  function fmtPrice(v) {
+    if (v >= 1000) return v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    if (v >= 10)   return v.toFixed(2);
+    return v.toFixed(4);
+  }
+
+  function pad2(n) { return String(n).padStart(2, '0'); }
+  function hhmmss(d) { return pad2(d.getHours()) + ':' + pad2(d.getMinutes()) + ':' + pad2(d.getSeconds()); }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    const rr = Math.min(r, h / 2, w / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + rr, y);
+    ctx.arcTo(x + w, y, x + w, y + h, rr);
+    ctx.arcTo(x + w, y + h, x, y + h, rr);
+    ctx.arcTo(x, y + h, x, y, rr);
+    ctx.arcTo(x, y, x + w, y, rr);
+    ctx.closePath();
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     1 · CINEMATIC PRELOADER
+  ═══════════════════════════════════════════════════════════ */
+  (function preloader() {
+    const pre  = $('#preloader');
+    const log  = $('#bootLog');
+    const bar  = $('#bootBar');
+    const pct  = $('#bootPct');
+    if (!pre) return;
+
+    const sequence = [
+      { t: 'INITIALIZING ZERODIAX CORE',        v: 'v4.2.1'   },
+      { t: 'MOUNTING SECURE KERNEL',            v: 'AES-256'  },
+      { t: 'VALETAX BRIDGE HANDSHAKE',          v: '#1682343' },
+      { t: 'STREAMING L2 ORDERFLOW',            v: '240ms'    },
+      { t: 'CALIBRATING ASTRO-SYNC ENGINE',     v: 'OK'       },
+      { t: 'SYNDICATE CLEARANCE',               v: 'GRANTED'  }
+    ];
+
+    document.documentElement.style.overflow = 'hidden';
+
+    let i = 0;
+    const total = sequence.length;
+
+    function pushLine(item) {
+      const row = document.createElement('div');
+      row.className = 'boot-line flex items-center gap-2 font-mono text-[10px] sm:text-[10.5px]';
+      row.innerHTML =
+        '<span class="text-slate-700 tabular-nums">' + hhmmss(new Date()) + '</span>' +
+        '<span class="text-accent/60">›</span>' +
+        '<span class="text-slate-300 truncate">' + item.t + '</span>' +
+        '<span class="ml-auto pl-2 text-emerald-400/85 whitespace-nowrap tabular-nums">' + item.v + '</span>';
+      log.appendChild(row);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function step() {
+      if (i < total) {
+        pushLine(sequence[i]);
+        i++;
+        const p = Math.round((i / total) * 100);
+        bar.style.width = p + '%';
+        pct.textContent = String(p).padStart(3, '0');
+        setTimeout(step, 260 + Math.random() * 190);
+      } else {
+        setTimeout(finish, 460);
+      }
+    }
+
+    function finish() {
+      bar.style.width = '100%';
+      pct.textContent = '100';
+      pre.classList.add('pre-out');
+      document.documentElement.style.overflow = '';
+      document.body.classList.add('booted');
+
+      // Hero boot-reveal cascade
+      $$('[data-boot-reveal]').forEach((el, k) => {
+        setTimeout(() => el.classList.add('in'), k * 95);
+      });
+
+      setTimeout(() => { pre.style.display = 'none'; }, 950);
+    }
+
+    setTimeout(step, 430);
+  })();
+
+  /* ═══════════════════════════════════════════════════════════
+     2 · HEADER / NAV
+  ═══════════════════════════════════════════════════════════ */
+  (function nav() {
+    const header = $('#header');
+    const bg = $('#headerBg');
+    const menuBtn = $('#menuBtn');
+    const mobileMenu = $('#mobileMenu');
+
+    function onScroll() {
+      if (window.scrollY > 12) {
+        bg.style.opacity = '1';
+        header.classList.add('shadow-[0_10px_40px_-20px_rgba(0,0,0,0.9)]');
+      } else {
+        bg.style.opacity = '0';
+        header.classList.remove('shadow-[0_10px_40px_-20px_rgba(0,0,0,0.9)]');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      $$('a', mobileMenu).forEach(a => {
+        a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+  })();
+
+  /* ═══════════════════════════════════════════════════════════
+     3 · CURSOR SPOTLIGHT (desktop only)
+  ═══════════════════════════════════════════════════════════ */
+  (function cursor() {
+    const glow = $('#cursorGlow');
+    if (!glow) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
+    let cx = tx, cy = ty;
+
+    window.addEventListener('mousemove', (e) => {
+      tx = e.clientX; ty = e.clientY;
+    }, { passive: true });
+
+    (function loop() {
+      cx += (tx - cx) * 0.09;
+      cy += (ty - cy) * 0.09;
+      glow.style.transform = 'translate(' + cx + 'px,' + cy + 'px)';
+      requestAnimationFrame(loop);
+    })();
+  })();
+
+  /* ═══════════════════════════════════════════════════════════
+     4 · SCROLL REVEAL + COUNTERS
+  ═══════════════════════════════════════════════════════════ */
+  (function reveal() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const delay = parseInt(el.dataset.delay || '0', 10);
+        setTimeout(() => el.classList.add('in'), delay);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    $$('[data-reveal]').forEach((el, i) => {
+      el.dataset.delay = String((i % 4) * 70);
+      io.observe(el);
+    });
+  })();
+
+  (function counters() {
+    function animate(el) {
+      const target = parseFloat(el.dataset.count);
+      const decimals = (el.dataset.count.split('.')[1] || '').length;
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const dur = 1500;
+      const t0 = performance.now();
+
+      function frame(now) {
+        const p = clamp((now - t0) / dur, 0, 1);
+        const e = 1 - Math.pow(1 - p, 3);
+        const val = target * e;
+        let out;
+        if (target >= 1000 && decimals === 0) {
+          out = Math.round(val).toLocaleString('en-US');
+        } else {
+          out = val.toFixed(decimals);
+        }
+        el.textContent = prefix + out + suffix;
+        if (p < 1) requestAnimationFrame(frame);
+        else {
+          el.textContent = prefix +
+            (target >= 1000 && decimals === 0 ? target.toLocaleString('en-US') : target.toFixed(decimals)) +
+            suffix;
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        animate(entry.target);
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    setTimeout(() => $$('[data-count]').forEach(el => io.observe(el)), 800);
+  })();
+
+  /* ═══════════════════════════════════════════════════════════
+     5 · MAIN CANVAS CANDLESTICK CHART
+  ═══════════════════════════════════════════════════════════ */
+  (function chart() {
+    const canvas = $('#mainChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const PAIRS = {
+      'XAU/USD':  { base: 2384.40, tick: 1.65, dec: 2 },
+      'BTC/USDT': { base: 67432.50, tick: 46.0, dec: 2 },
+      'ETH/USDT': { base: 3488.20, tick: 5.40, dec: 2 },
+      'NAS100':   { base: 18244.60, tick: 11.5, dec: 2 }
+    };
+
+    let currentPair = 'XAU/USD';
+    let meta = PAIRS[currentPair];
+
+    const MAX_CANDLES = 62;
+    let candles = [];
+
+    let W = 0, H = 0, DPR = 1;
+    const PAD = { top: 18, right: 66, bottom: 42, left: 10 };
+
+    /* ---------- data ---------- */
+    function makeCandle(prevClose, tick) {
+      const open = prevClose;
+      const drift = (Math.random() - 0.485) * tick;
+      const close = Math.max(0.0001, open + drift);
+      const upWick = Math.random() * tick * 0.62;
+      const dnWick = Math.random() * tick * 0.62;
+      return {
+        open: open,
+        close: close,
+        high: Math.max(open, close) + upWick,
+        low: Math.min(open, close) - dnWick,
+        vol: 0.22 + Math.random() * 0.78
+      };
+    }
+
+    function seed() {
+      candles = [];
+      let p = meta.base;
+      for (let i = 0; i < MAX_CANDLES; i++) {
+        const c = makeCandle(p, meta.tick);
+        candles.push(c);
+        p = c.close;
+      }
+    }
+
+    /* ---------- sizing ---------- */
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      DPR = Math.min(window.devicePixelRatio || 1, 2);
+      W = Math.max(1, rect.width);
+      H = Math.max(1, rect.height);
+      canvas.width = Math.floor(W * DPR);
+      canvas.height = Math.floor(H * DPR);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      draw();
+    }
+
+    /* ---------- drawing ---------- */
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      if (!candles.length || W < 20 || H < 20) return;
+
+      const plotW = W - PAD.left - PAD.right;
+      const plotH = H - PAD.top - PAD.bottom;
+      if (plotW <= 10 || plotH <= 10) return;
+
+      let hi = -Infinity, lo = Infinity, maxVol = 0.0001;
+      for (let i = 0; i < candles.length; i++) {
+        const c = candles[i];
+        if (c.high > hi) hi = c.high;
+        if (c.low < lo) lo = c.low;
+        if (c.vol > maxVol) maxVol = c.vol;
+      }
+      const rangePad = (hi - lo) * 0.09 || 1;
+      hi += rangePad;
+      lo -= rangePad;
+      const range = hi - lo;
+
+      const yOf = (p) => PAD.top + ((hi - p) / range) * plotH;
+
+      /* --- horizontal grid + price axis --- */
+      const rows = 5;
+      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.textBaseline = 'middle';
+      ctx.textAlign = 'left';
+
+      for (let i = 0; i <= rows; i++) {
+        const y = PAD.top + (plotH / rows) * i;
+        ctx.strokeStyle = 'rgba(255,255,255,0.045)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(PAD.left, y + 0.5);
+        ctx.lineTo(PAD.left + plotW, y + 0.5);
+        ctx.stroke();
+
+        const price = hi - (range / rows) * i;
+        ctx.fillStyle = 'rgba(148,163,184,0.42)';
+        ctx.fillText(price.toFixed(meta.dec), PAD.left + plotW + 9, y);
+      }
+
+      /* --- vertical grid --- */
+      const n = candles.length;
+      const cw = plotW / n;
+
+      ctx.strokeStyle = 'rgba(255,255,255,0.028)';
+      for (let i = 0; i < n; i += 10) {
+        const x = PAD.left + cw * i + cw / 2;
+        ctx.beginPath();
+        ctx.moveTo(x + 0.5, PAD.top);
+        ctx.lineTo(x + 0.5, PAD.top + plotH);
+        ctx.stroke();
+      }
+
+      /* --- volume bars --- */
+      const volH = plotH * 0.16;
+      const volBase = PAD.top + plotH;
+      for (let i = 0; i < n; i++) {
+        const c = candles[i];
+        const x = PAD.left + cw * i;
+        const bh = (c.vol / maxVol) * volH;
+        const up = c.close >= c.open;
+        ctx.fillStyle = up ? 'rgba(16,185,129,0.16)' : 'rgba(244,63,94,0.16)';
+        ctx.fillRect(x + cw * 0.22, volBase - bh, Math.max(1, cw * 0.56), bh);
+      }
+
+      /* --- candles --- */
+      const bodyW = clamp(cw * 0.62, 2, 11);
+
+      for (let i = 0; i < n; i++) {
+        const c = candles[i];
+        const x = PAD.left + cw * i + cw / 2;
+        const up = c.close >= c.open;
+        const yH = yOf(c.high);
+        const yL = yOf(c.low);
+        const yO = yOf(c.open);
+        const yC = yOf(c.close);
+
+        /* wick */
+        ctx.strokeStyle = up ? 'rgba(16,185,129,0.75)' : 'rgba(244,63,94,0.75)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x, yH);
+        ctx.lineTo(x, yL);
+        ctx.stroke();
+
+        /* body */
+        const top = Math.min(yO, yC);
+        const bh = Math.max(1.4, Math.abs(yC - yO));
+        ctx.fillStyle = up ? 'rgba(16,185,129,0.88)' : 'rgba(244,63,94,0.88)';
+        ctx.fillRect(x - bodyW / 2, top, bodyW, bh);
+
+        /* subtle top highlight on last candle */
+        if (i === n - 1) {
+          ctx.strokeStyle = up ? 'rgba(16,185,129,0.9)' : 'rgba(244,63,94,0.9)';
+          ctx.lineWidth = 1;
+          ctx.strokeRect(x -
